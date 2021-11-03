@@ -1,0 +1,13 @@
+<div id="popupContainer" [ngClass]="appStoreService.popup.type+'PopUp'" class="flex flexJustifyCenter flexAlignItemsCenter "
+  *ngIf="appStoreService.popup.load">
+  <div id="popupOverlay" (click)="closePopup('overlay')"></div>
+  <div id="popupContentBox" class="custom-scrollbar">
+    <div [ngSwitch]="appStoreService.popup.type" >
+      <div *ngSwitchCase="'createUser'">
+        <app-create-user-popup (close)="closePopup($event)" [popup]="appStoreService.popup"></app-create-user-popup>
+      
+      </div>
+      <div *ngSwitchDefault></div>
+    </div>
+  </div>
+</div>

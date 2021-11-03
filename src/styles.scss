@@ -1,0 +1,319 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/css/variable';
+@import './assets/css/fonts';
+@import './assets/css/icons';
+
+html, body {
+  height: 100% !important;
+}
+
+body {
+  overflow: hidden;
+}
+
+.bdr-btm-1-d5dcef {
+  border-bottom: solid 1px $color-d5dcef;
+}
+
+.bdr-1-btm-c3cbe2 {
+  border-bottom: solid 1px $color-c3cbe2;
+}
+
+.bdr-top-1-d5dcef {
+  border-top: solid 1px $color-d5dcef;
+}
+
+.bdr-top-1-d2d7e3 {
+  border-top: solid 1px $color-d2d7e3;
+}
+
+.bdr-bottom-1-ccd1e3{
+  border-bottom: 1px solid $color-ccd1e3;
+}
+
+.bdr-1-d5dcef {
+  border: solid 1px $color-d5dcef;
+}
+
+.bdr-rgt-1-d5dcef {
+  border-right: solid 1px $color-d5dcef;
+}
+
+.bdr-1-ccd4eb {
+  border: 1px solid $color-ccd4eb;
+}
+
+.bdr-1-rgt-ccd4eb {
+  border-right: 1px solid $color-ccd4eb;
+}
+
+.bdr-1-rgt-a0accc {
+  border-right: 1px solid $color-a0accc;
+}
+
+.bdr-1-a0accc {
+  border: 1px solid $color-a0accc;
+}
+
+.bdr-1-rght-d6dceb {
+  border-right: 1px solid $color-d6dceb;
+}
+
+.bdr-1-rght-9db8bf {
+  border-right: 1px solid $color-9db8bf;
+}
+
+.bdr-1-9db8bf {
+  border: 1px solid $color-9db8bf;
+}
+
+.bdr-1-ccd1e3 {
+  border: 1px solid $color-ccd1e3;
+}
+
+.bdr-1-rgt-ccd1e3 {
+  border-right: 1px solid $color-ccd1e3;
+}
+
+.bdr-1-btm-ccd1e3 {
+  border-bottom: 1px solid $color-ccd1e3;
+}
+
+.bdr-1-c3cbe2 {
+  border: 1px solid $color-c3cbe2;
+}
+
+.bdr-1-e13b56 {
+  border: 1px solid $color-e13b56;
+}
+
+.bdr-1-d8d3f2 {
+  border: 1px solid $color-d8d3f2;
+}
+
+.bdr-1-acc6e5 {
+  border: 1px solid $color-acc6e5;
+}
+
+.bdr-1-b6c2e3 {
+  border: 1px solid $color-b6c2e3;
+}
+
+
+.bdrLeft-12b5badb{
+  border-left: 12px solid $color-b5badb;
+}
+
+.bdrLeft-12c5cce0{
+  border-left: 12px solid $color-c5cce0;
+}
+
+.bdrLeft-1acc6e5{
+  border-left: 1px solid $color-acc6e5; 
+}
+
+.bdr-1-1c256b{
+  border: 1px solid $color-1c256b;
+}
+
+.bdr-1-147ad6{
+  border: 1px solid $color-147ad6;
+}
+
+
+.triangle-left::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent $color-edf1fb transparent transparent;
+}
+
+
+.box-shadow-00020400rgba21408822 {
+  box-shadow: $box-shadow-rgba21408822;
+}
+
+.box-shadow-00032400rgba21408822 {
+  box-shadow: $box-shadow-00032400rgba21408822;
+}
+
+.box-shadow-00030300rgba21408822 {
+  box-shadow: 0 3px 3px 0 rgb(21 40 88 / 16%);
+}
+
+.box-shadow-00032400rgba214088016{
+  box-shadow: 0 3px 24px 0 rgba(21, 40, 88, 0.16);
+}
+
+.box-shadow-00020400rgba214088034{
+  box-shadow: 0 1px 2px 0 rgba(21, 40, 88, 0.34);
+}
+
+
+.ripple  {
+  position: relative ;
+  overflow: hidden !important;
+  transform: translate3d(0, 0, 0) !important;
+
+  &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, $color-000000 10%, transparent 10.01%);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: scale(10, 10);
+      opacity: 0;
+      transition: transform .5s, opacity 1s;
+  }
+
+  &:active:after {
+      transform: scale(0, 0);
+      opacity: .2;
+      transition: 0s;
+  }
+}
+
+.close-popup {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 25px;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+
+
+/* Button customization */
+.button-primary {
+  background: $color-ffffff;
+  padding: 12px 40px;
+  font-size: 18px;
+  letter-spacing: .48px;
+  color: $color-061f45;
+  border: none;
+  outline: 0;
+  border-radius: 30px;
+  &:hover {
+      opacity: .8;
+  }
+}
+
+.button-primary.btn-02457a {
+  background: $color-02457a;
+  color:  $color-ffffff;
+}
+
+/* inuput customization */
+.card-input {
+  padding: 15px 40px 15px 15px;
+  border-radius: 6px;
+  box-shadow: $box-shadow03280rgb0005;
+  border: 1px solid $color-eeeeee;
+  background-color: $color-ffffff;
+  font-size: 16px;
+  color: $color-030303;
+  width: 100%;
+  font-family: poppins-regular;
+}
+
+.input-icon.password {
+  background: url('./assets/images/password.svg') $color-ffffff 100% no-repeat;
+  background-position: calc(100% - 15px) 15px !important;
+}
+
+.input-icon.email {
+  background: url('./assets/images/email.svg') $color-ffffff 100% no-repeat;
+  background-position: calc(100% - 15px) 15px !important;
+}
+button:disabled {
+  background: $color-aaaaaa !important;
+  opacity: 1;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+select.card-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  /* no standardized syntax available, no ie-friendly solution available */
+  background-position: calc(100% - 15px) 17px !important;
+  background: url('./assets/images/arrow_down.svg') $color-ffffff 100% no-repeat;
+  background-size: 15px 15px;
+}
+
+.custom-checkbox.check-02457A,
+.custom-radio.blue,
+.custom-checkbox.blue {
+    input[type="radio"]:checked,
+    input[type="checkbox"]:checked {
+        background: $color-02457a !important;
+    }
+}
+
+.custom-radio {
+    input[type="radio"],
+    input[type="checkbox"] {
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        background: $color-dedede;
+        height: 25px;
+        width: 25px;
+        border-radius: 25px;
+    }
+    input[type="radio"]:checked,
+    input[type="checkbox"]:checked {
+        background: $color-2aa1c0;
+    }
+    input[type="radio"]:hover,
+    input[type="checkbox"]:hover {
+        filter: brightness(90%);
+    }
+    input[type="radio"]:disabled,
+    input[type="checkbox"]:disabled {
+        background: $color-e6e6e6;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+    input[type="radio"]:after,
+    input[type="checkbox"]:after {
+        content: '';
+        position: relative;
+        left: 40%;
+        top: 20%;
+        width: 15%;
+        height: 40%;
+        border: solid $color-ffffff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        display: none;
+    }
+    input[type="radio"]:checked:after,
+    input[type="checkbox"]:checked:after {
+        display: block;
+    }
+    input[type="radio"]:disabled:after,
+    input[type="checkbox"]:disabled:after {
+        border-color: $color-7b7b7b;
+    }
+}

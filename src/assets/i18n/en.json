@@ -1,0 +1,23 @@
+{
+"____________LOGIN_PAGE___________": "____________LOGIN_PAGE_______________",
+"user login": "User login",
+"please login to your account": "Please login to your account",
+"sign in": "Sign In",
+
+"____________EMPTY_STATE___________": "____________EMPTY_STATE_______________",
+"no data available": "No Data Available",
+
+"____________USER_LIST_PAGE___________": "____________USER_LIST_PAGE_______________",
+"users list": "Users list",
+"add user": "Add User",
+
+"____________CREATE_USER_POPUP___________": "____________CREATE_USER_POPUP_______________",
+"first name": "First Name",
+"last name": "Last Name",
+"email": "Email",
+"phone": "Phone",
+"username": "Username",
+"dob": "DOB",
+"create user": "Create User",
+"create": "Create"
+}

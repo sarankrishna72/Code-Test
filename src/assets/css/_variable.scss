@@ -1,0 +1,237 @@
+/* HEXA COLOR START HERE */
+$color-909aba: #909aba;
+$color-1c256b: #1c256b;
+$color-1c256b: #1c256b;
+$color-201b56: #201b56;
+$color-d5dcef: #d5dcef;
+$color-ccd4eb: #ccd4eb;
+$color-000000: #000000;
+$color-e13b56: #e13b56;
+$color-808292: #808292;
+$color-eaecf5: #eaecf5;
+$color-f0f1f5: #f0f1f5;
+$color-eaecf5: #eaecf5;
+$color-d9e1f2: #d9e1f2;
+$color-ffffff: #ffffff;
+$color-7280ac: #7280ac;
+$color-4b507b: #4b507b;
+$color-3cc480: #3cc480;
+$color-edf1fb: #edf1fb;
+$color-f8f9fa: #f8f9fa;
+$color-ccd1e3: #ccd1e3;
+$color-f5f6fa: #f5f6fa;
+$color-9199af: #9199af;
+$color-c3cbe2: #c3cbe2;
+$color-e4e6f0: #e4e6f0;
+$color-e9eaf2: #e9eaf2;
+$color-eff0f5: #eff0f5;
+$color-717386: #717386;
+$color-d2d7e3: #d2d7e3;
+$color-d8d3f2: #d8d3f2;
+$color-3e4aa5: #3e4aa5;
+$color-a55e3e: #a55e3e;
+$color-a58d3e: #a58d3e;
+$color-3ea596: #3ea596;
+$color-38453f: #38453f;
+$color-147ad6: #147ad6;
+$color-4e597c: #4e597c;
+$color-d6dceb: #d6dceb;
+$color-f2f6f7: #f2f6f7;
+$color-080048: #080048;
+$color-bfd4d8: #bfd4d8;
+$color-9db8bf: #9db8bf;
+$color-3e95a5: #3e95a5;
+$color-b5badb: #b5badb;
+$color-f2f2f2: #f2f2f2;
+$color-d7e6f8: #d7e6f8;
+$color-263153: #263153;
+$color-a0accc: #a0accc;
+$color-232e55: #232e55;
+$color-acc6e5: #acc6e5;
+$color-b6c2e3: #b6c2e3;
+$color-d6ede2: #d6ede2;
+$color-349f69: #349f69;
+$color-d3dbed: #d3dbed;
+$color-c5cce0: #c5cce0;
+$color-c4853c: #c4853c;
+$color-02457a: #02457a;
+$color-061f45: #061f45;
+$color-eeeeee: #eeeeee;
+$color-030303: #030303;
+$color-4caf50: #4CAF50;
+$color-2f96b4: #2f96b4;
+$color-f89406: #f89406;
+$color-bd362f: #bd362f;
+$color-999999: #999999;
+$color-dedede: #dedede;
+$color-2aa1c0: #2aa1c0;
+$color-e6e6e6: #e6e6e6;
+$color-7b7b7b: #7b7b7b;
+$color-aaaaaa: #aaaaaa;
+/* RGBA COLOR END HERE */
+
+
+/* BOX SHADOW START HERE */
+$box-shadow-rgba21408822: 0 2px 4px 0 rgba(21, 40, 88, 0.22);
+$box-shadow-00032400rgba21408822: 0 3px 24px 0 rgba(21, 40, 88, 0.16);
+$box-shadow0003240rgba21408816:  0 3px 24px 0 rgba(21, 40, 88, 0.16);
+$box-shadow03280rgb0005: 0 3px 28px 0 rgb(0 0 0 / 5%);
+/* BOX SHADOW END HERE */
+
+
+.box-shadow0003240rgba21408816 {
+  box-shadow: $box-shadow0003240rgba21408816;
+}
+
+
+/* colors */
+.color-02457A {
+  color: $color-02457a;
+}
+.color-3ea596 {
+  color: $color-3ea596 !important;
+}
+
+.color-349f69 {
+  color: $color-349f69 !important;
+}
+
+.color-232e55 {
+  color: $color-232e55 !important;
+}
+
+.color-263153 {
+  color: $color-263153;
+}
+
+.color-080048 {
+  color: $color-080048 !important;
+}
+
+.color-3e95a5 {
+  color:  $color-3e95a5 !important;
+}
+
+.color-4e597c {
+  color: $color-4e597c !important;
+}
+
+.color-147ad6 {
+  color: $color-147ad6 !important;
+}
+
+.color-38453f {
+  color: $color-38453f !important;
+}
+
+.color-3e4aa5 {
+  color: $color-3e4aa5 !important;
+}
+
+.color-a55e3e {
+  color: $color-a55e3e;
+}
+
+.color-a58d3e {
+  color: $color-a58d3e;
+}
+
+.color-909aba {
+  color: $color-909aba;
+}
+
+.color-1c256b {
+  color: $color-1c256b !important;
+}
+
+.color-c4853c{
+  color: $color-c4853c;
+}
+
+.color-e13b56 {
+  color: $color-e13b56;
+}
+
+.color-808292 {
+  color: $color-808292;
+}
+
+.color-7280ac {
+  color: $color-7280ac;
+}
+
+.color-4b507b {
+  color: $color-4b507b;
+}
+
+.color-3cc480 {
+  color: $color-3cc480 !important;
+}
+
+.color-9199af {
+  color: $color-9199af;
+}
+
+.color-717386 {
+  color: $color-717386;
+}
+
+/* background */
+
+.bg-d9e1f2 {
+  background-color: $color-d9e1f2;
+}
+
+.bg-349f69{
+  background-color: $color-349f69;
+}
+
+.bg-linear-gradient {
+  background-image: linear-gradient(to bottom, $color-edf1fb, $color-f8f9fa);
+}
+
+.bg-linear-gradient2 {
+  background-image: linear-gradient(to bottom, $color-e4e6f0, $color-e9eaf2 83%, $color-eff0f5)
+}
+
+.bg-linear-table {
+  background-image: linear-gradient(to bottom, rgba(216, 219, 234, 0.4) -76%, rgba(128, 128, 128, 0));
+
+}
+
+.bg-left-menu {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) -22%, rgba(205, 214, 237, 0.24));
+}
+
+.bg-f5f6fa {
+  background: $color-f5f6fa;
+}
+
+
+.bg-f2f6f7 {
+  background: $color-f2f6f7;
+}
+
+.bg-b5badb {
+  background: $color-b5badb;
+}
+
+.bg-3e4aa5 {
+  background: $color-3e4aa5;
+}
+
+.bg-f2f2f2 {
+  background: $color-f2f2f2;
+}
+
+.bg-d7e6f8 {
+  background: $color-d7e6f8;
+}
+
+.bg-d6ede2 {
+  background: $color-d6ede2;
+}
+
+.bg-d3dbed{
+  background: $color-d3dbed;
+}

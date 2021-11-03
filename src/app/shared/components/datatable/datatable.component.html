@@ -1,0 +1,132 @@
+<div class=" displayFlowrot">
+  <div class="width100 scrollBarStyle " [ngStyle]="{'height': table?.fixedHeight}"
+    [ngClass]="{'verticalScrollContainer': (table?.fixedHeight?true:false), 'horizontalScrollContainer': table?.responsive, 'overflowAuto': table?.fixedHeight && table?.responsive}">
+    <table class="dataTb width100" *ngIf="table?.body?.length > 0">
+      <thead class="bdr-1-btm-c3cbe2 bg-linear-table">
+        <tr *ngIf="table?.mainHead?.length">
+          <ng-container *ngFor="let tbHeadItem of table?.head; let index = index;">
+
+            <th class="lato-heavy color-717386 font15" [attr.colspan]="table.mainHead[index]?.span"
+              *ngIf="table.mainHead[index]?.title" [ngClass]="{'pad10': table.mainHead[index]?.title}" [ngClass]="{
+              'txtCenter': tbHeadItem.textCenter,
+              'stickyLeft': tbHeadItem.sticky == 'left',
+              'stickyRight': tbHeadItem.sticky == 'right',
+              'hide': !tbHeadItem.visible,
+              'flexNoShrink': !tbHeadItem.shrink
+            }" [innerHTML]="table.mainHead[index]?.title?table.mainHead[index]?.title:''">
+            </th>
+          </ng-container>
+        </tr>
+        <tr>
+          <th *ngIf="table.isDetil">
+
+          </th>
+          <th class="lato-heavy color-717386 font15" *ngFor="let tbHeadItem of table?.head; let index = index"
+            [ngClass]="{
+            'txtCenter': tbHeadItem.textCenter,
+            'stickyLeft': tbHeadItem.sticky == 'left',
+            'stickyRight': tbHeadItem.sticky == 'right',
+            'hide': !tbHeadItem.visible ,
+            'flexNoShrink': !tbHeadItem.shrink
+          }">
+            <div [ngSwitch]="tbHeadItem.value" class="tbHeaderBdr">
+              <!-- <div *ngSwitchCase="'checkbox'">
+                <div class="checkBoxContainer">
+                  <input type="checkbox" id="selectAll" [(ngModel)]="selectAll" (click)="allSelectCTA($event)">
+                  <label for="selectAll"></label>
+                </div>
+              </div> -->
+              <div *ngSwitchDefault>
+                <div class="pad15 flex flexAlignItemsCenter flexJustifyBetween cursorPtr"
+                  id="sortByColumn{{tbHeadItem.title.split(' ').join('').toLowerCase()}}"
+                  (click)="sortByColumn(tbHeadItem, index);">
+                  <span [ngClass]="{flexNoShrink: !tbHeadItem.shrink}">
+                    {{tbHeadItem.title}}
+                  </span>
+                  <i class="icns icon-table-sort d20 ripple cursorPtr" *ngIf="tbHeadItem.sortable"></i>
+                </div>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let tbBodyItem of (table?.body | search: search); let index = index; let last = last;">
+          <tr>
+            <td class="pad15 bdr-1-btm-ccd1e3 lato-semibold  font15 lineHeight16px bg-white "
+              *ngIf="table.isDetil">
+              <div class="bdr-1-rght-d6dceb">
+                <i class="icns icon-table-sort d20 ripple cursorPtr" (click)="tbBodyItem.isShowDetail = !tbBodyItem.isShowDetail"></i>
+              </div>
+
+            </td>
+            <td *ngFor="let tbHeadItem of table?.head"
+              [ngClass]="{'txtCenter': tbHeadItem.textCenter, 'stickyLeft': tbHeadItem.sticky == 'left', 'stickyRight': tbHeadItem.sticky == 'right','hide': !tbHeadItem.visible }"
+              class="color-black {{tbHeadItem.itemClass}} pad15 bdr-1-btm-ccd1e3 lato-semibold  font15 lineHeight16px bg-white">
+              <div [ngSwitch]="tbHeadItem.value">
+                <div *ngSwitchCase="'checkbox'">
+                  <div class="checkBoxContainer">
+                    <input type="checkbox" name="select_{{index}}" id="select_{{index}}"
+                      [(ngModel)]="tbBodyItem.isChecked" (ngModelChange)="rowSelectCTA(tbBodyItem, index)">
+                    <label for="select_{{index}}"></label>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'action'">
+                  <div (click)="tableAction(tbHeadItem.actionType)" [innerHtml]="tbBodyItem[tbHeadItem.value]">
+                  </div>
+                </div>
+                <div *ngSwitchDefault>
+                  <div *ngIf="!tbHeadItem.html"
+                    [ngClass]="{'truncate': tbHeadItem.truncate, 'maxWidth200px': tbHeadItem.truncate}">
+                    {{ tbBodyItem[tbHeadItem.value] }}</div>
+                  <div *ngIf="tbHeadItem.html" [innerHtml]="tbBodyItem[tbHeadItem.value]"></div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr *ngIf="tbBodyItem.isShowDetail">
+            <td [attr.colspan]=" table?.head?.length + 1" class="padleft10 padright10" [innerHtml]="tbBodyItem.detail"></td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <div class="height100p" *ngIf="table?.body.length == 0 || (table?.body | search: search).length == 0">
+      <app-empty-state [sectionType]="table.emptyState"></app-empty-state>
+    </div>
+
+  </div>
+  <div class="pagination pad1015" *ngIf="table.isPagination && table.paginationData && table.body.length != 0">
+    <!-- <div class="pagination pad15"> -->
+      <div class="matPagination flex flexAlignItemsCenter flexJustifyEnd">
+        <div class="padright15">
+          <span class="matPaginatorLabel padright5">{{'itms pr pge' | translate}}: </span>
+          <select [(ngModel)]="table.paginationData.per_page" id="itemsPerPage" (change)="paginationEvent('limit')">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+          </select>
+        </div>
+      <span class="matPaginatorLabel padright15 padleft15">{{'pagination out of' | translate: {start: table.paginationData?.page_no, total: table.paginationData?.total_pages} }}</span>
+        <i class="icns icon-pagination-first-page d25 pad10 cursorPtr" id="paginationFirst" (click)="paginationEvent('first')" [ngClass]="{'pointerEventsNoneFade': table.paginationData.page_no == 1 || table.paginationData.total_pages == 0}" aria-hidden="true"></i>
+        <i class="icns icon-pagination-left d25 pad10 cursorPtr" id="paginationPrevious" (click)="paginationEvent('previous')" [ngClass]="{'pointerEventsNoneFade': table.paginationData.page_no == 1 || table.paginationData.total_pages == 0}" aria-hidden="true"></i>
+        <i class="icns icon-pagination-right d25 pad10 cursorPtr" id="paginationNext" (click)="paginationEvent('next')" [ngClass]="{'pointerEventsNoneFade': ((table.paginationData.page_no) == table.paginationData.total_pages) || table.paginationData.total_pages == 0}" aria-hidden="true"></i>
+        <i class="icns icon-pagination-last-page d25 pad10 cursorPtr" id="paginationLast" (click)="paginationEvent('last')" [ngClass]="{'pointerEventsNoneFade': ((table.paginationData.page_no) == table.paginationData.total_pages) || table.paginationData.total_pages == 0}" aria-hidden="true"></i>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

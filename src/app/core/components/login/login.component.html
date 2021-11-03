@@ -1,0 +1,48 @@
+<section id="user-signin-page" class="user-auth-bg minHeight100vh pad15 overflowAuto flex flexAlignItemsCenter">
+  <div class="section1464">
+      <!-- <div class="width100 txtCenter">
+          <i class="icon-logo-white icns user-login"></i>
+      </div> -->
+      <div class="txtCenter poppins-medium font35 fontWeight600 lineHeight40px color-white  padtop25 padbtm20 ">
+          {{'welcome' | translate}}
+      </div>
+      <div class="width100 txtCenter font20 color-white  padbtm25 poppins-regular">
+          {{'please login to your account' | translate}}
+      </div>
+      <div class="desktop-card width50 mrgnauto bg-white bdrRadius10px boxShadow-RGBA00005">
+          <div class="pad20">
+              <div class="width100 font25 color-02457A mobi-color-white  txtCenter padtop5 fontWeight600 poppins-regular padbtm25">
+                  {{'user login' | translate}}
+              </div>
+              <!-- normal sign in start here -->
+              <form [formGroup]="form" class="width80 mrgnauto txtCenter" (submit)="onSubmit()">
+                  <div class="width100">
+                      <input type="email" formControlName="email" [ngClass]="{'bdr-red': (f('email')?.invalid && (f('email')?.dirty || f('email')?.touched))  }" autocomplete="off" class="card-input email input-icon" placeholder="{{'email' | translate}}" />
+                  </div>
+                  <div class="pad10"></div>
+                  <div class="width100 posRelative">
+                      <input type="password" [ngClass]="{'bdr-red': (f('password')?.invalid && (f('password')?.dirty || f('password')?.touched))}" formControlName="password" autocomplete="off" class="card-input password input-icon" placeholder="{{'password' | translate}}"
+                      />
+                  </div>
+                  <div class="pad10"></div>
+                  <div class="pad10"></div>
+                  <div class="txtCenter">
+                      <button type="submit" [disabled]="form.invalid" class="button-primary btn-02457a font16 ripple poppins-medium cursorPtr">
+                          {{'sign in' | translate}}
+                      </button>
+                  </div>
+                  <div class="pad10"></div>
+                  <!-- <div class="color-122A4D mobi-color-white fontWeight500 poppins-regular font15">
+                      {{'dont have an account' | translate}}
+                      <a [routerLink]="['#']" class="cursorPtr fontWeight600 mobi-color-white font16 underline-anchor-hover color-122A4D poppins-regular">
+                          {{'sign up' | translate}}</a>
+                  </div> -->
+              </form>
+              <!-- normal sign in end here -->
+          </div>
+
+          <!-- Social Sign in Start here -->
+          <!-- Social Sign in End here -->
+      </div>
+  </div>
+</section>

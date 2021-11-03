@@ -1,0 +1,13 @@
+<div @fadeIn id="toast-container" *ngIf="appStoreService.toast.load"  class="toast-{{appStoreService.toast.position}}">
+    <div class="toast toast-{{appStoreService.toast.type}} flex flexAlignItemsCenter">
+        <div class="">
+            <i class="icns icon-{{appStoreService.toast.type}} d35 toast-icon"></i>
+        </div>
+        <div class="flex1 padleft5">
+            <div class="toast-title" [innerHTML]="appStoreService.toast?.context?.title"
+                *ngIf="appStoreService.toast?.context?.title"></div>
+            <div class="toast-message" [innerHTML]="appStoreService.toast?.context?.description"
+                *ngIf="appStoreService.toast?.context?.description"></div>
+        </div>
+    </div>
+</div>

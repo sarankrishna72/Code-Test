@@ -1,0 +1,6 @@
+<div [ngSwitch]="stateType" id="noDataSection" class="noDataAvailable flex flexDirectionCol flexAlignItemsCenter flexJustifyCenter height100p">
+<ng-container *ngSwitchDefault>
+    <h4 class="title txtTransformCaps poppins-semibold" [innerHTML]="'no data available' | translate"></h4>
+    <div class="description txtTransformCaps poppins-regular" [innerHTML]="'uh-oh! much empty here. please check back later' | translate"></div>
+</ng-container>
+</div>

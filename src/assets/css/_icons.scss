@@ -1,0 +1,57 @@
+/* Icons CSS Start Here */
+.icns {
+  display: inline-block;
+  background-size: contain !important;
+}
+.icon-report {
+  background: url("../images/report.svg") no-repeat center center;
+}
+
+.icon-notification {
+  background: url("../images/notification.svg") no-repeat center center;
+}
+
+.icon-three-dots.blue {
+  background: url("../images/three_dots_blue.svg") no-repeat center center;
+}
+
+.icon-three-dots.grey {
+  background: url("../images/three_dots_grey.svg") no-repeat center center;
+}
+
+.icon-pagination-left {
+  background: url("../images/chevron_left.svg") no-repeat center center
+}
+
+.icon-pagination-right {
+  background: url("../images/chevron_right.svg") no-repeat center center
+}
+
+.icon-pagination-first-page {
+  background: url("../images/first_page.svg") no-repeat center center
+}
+
+.icon-pagination-last-page {
+  background: url("../images/last_page.svg") no-repeat center center
+}
+
+.user-auth-bg {
+  background: url('../images/blue-bg.jpg');
+  background-size: cover;
+}
+
+.icon-table-sort {
+  background: url("../images/table_sort.svg") no-repeat center center;
+}
+
+.icon-search.blue {
+  background: url("../images/search_blue.svg") no-repeat center center;
+}
+
+.icon-plus.blue {
+  background: url("../images/plus.svg") no-repeat center center;
+}
+
+.icon-logout {
+  background: url("../images/logout.svg") no-repeat center center;
+}

@@ -1,0 +1,100 @@
+<div id="create-group" class="bdrRadius6px bg-white pad20 posRelative overflowHidden"
+  [ngClass]="popup?.context?.userType">
+  <span class="close-popup ripple bg-F1F4FE bdrRadius4px" (click)="closePopup();">×</span>
+  <div id="create-group-popup" class="overflowHidden">
+    <div class="width100 mrgnauto">
+      <div class="poppins-semibold font22 timeline-label padbtm20 txtCenter ">
+        {{ 'create user' | translate}}
+      </div>
+      <div
+        class="width100 mrgnauto boxShadow-RGBA00005 bg-FFFFFF bdrRadius6px flex flexResponsive overflowAuto custom-scrollbar">
+        <form class="mrgnauto txtCenter width100" [formGroup]="form" (submit)="onSubmit();">
+          <div class="overflowAuto">
+            <div class="flex flexJustifyBetween flexResponsive" formGroupName="name">
+              <div class="width20 flex flexResponsive mrgntop20">
+                <select class="card-input ripple cursorPtr poppins-regular color-484848"
+                  [ngClass]="{'bdr-red': (f('name')?.controls['title']?.invalid && (f('name')?.controls['title']?.dirty || f('name')?.controls['title']?.touched))}"
+                  formControlName="title">
+                  <option [value]="item.id" class="ripple cursorPtr" *ngFor="let item of nameTitle">{{item.id}}</option>
+                </select>
+              </div>
+              <div class="pad5"></div>
+              <div class="width40 flex flexResponsive mrgntop20">
+                <input type="text" class="card-input poppins-regular color-484848 pad15"
+                  [ngClass]="{'bdr-red': (f('name')?.controls['first']?.invalid && (f('name')?.controls['first']?.dirty || f('name')?.controls['first']?.touched))}"
+                  formControlName="first" placeholder="{{'first name' | translate }}" />
+              </div>
+              <div class="pad5"></div>
+              <div class="width40 flex flexResponsive mrgntop20">
+                <input type="text" class="card-input poppins-regular color-484848 pad15"
+                  [ngClass]="{'bdr-red': (f('name')?.controls['last']?.invalid && (f('name')?.controls['last']?.dirty ||f('name')?.controls['last']?.touched))}"
+                  formControlName="last" placeholder="{{'last name' | translate }}" />
+              </div>
+            </div>
+            <div class="width100 flex flexResponsive mrgntop20">
+              <div class="custom-radio flex flexAlignItemsStart blue mrgnbtm10 flexAlignItemsCenter">
+                <input type="radio" class="flexNoShrink" value="Male" formControlName="gender" name="gender">
+                <span class="poppins-regular timeline-label font15 txtLeft padleft10 padtop2">
+                  {{'Male' | translate}}
+                </span>
+              </div>
+              <div class="pad5"></div>
+              <div class="custom-radio flex flexAlignItemsStart blue mrgnbtm10 flexAlignItemsCenter">
+                <input type="radio" class="flexNoShrink" value="Female" formControlName="gender" name="gender">
+                <span class="poppins-regular timeline-label font15 txtLeft padleft10 padtop2">
+                  {{'Female' | translate}}
+                </span>
+              </div>
+              <div class="pad5"></div>
+              <div class="custom-radio flex flexAlignItemsStart blue mrgnbtm10 flexAlignItemsCenter">
+                <input type="radio" class="flexNoShrink" value="Other" formControlName="gender" name="gender">
+                <span class="poppins-regular timeline-label font15 txtLeft padleft10 padtop2">
+                  {{'Other' | translate}}
+                </span>
+              </div>
+            </div>
+            <div class="flex flexResponsive" >
+              <div class="width50 flex flexResponsive mrgntop20">
+                <input type="text" class="card-input poppins-regular color-484848 pad15"
+                  [ngClass]="{'bdr-red': (f('email')?.invalid && (f('email')?.dirty || f('email')?.touched))}"
+                  formControlName="email" placeholder="{{'email' | translate }}" />
+              </div>
+              <div class="pad5"></div>
+              <div class="width50 flex flexResponsive mrgntop20">
+                <input type="text" class="card-input poppins-regular color-484848 pad15"
+                  [ngClass]="{'bdr-red': (f('phone')?.invalid && (f('phone')?.dirty || f('phone')?.touched))}"
+                  formControlName="phone" placeholder="{{'phone' | translate }}" />
+              </div>
+            </div>
+
+            <div class="flex flexResponsive" >
+              <div class="width50 flex flexResponsive mrgntop20">
+                <input type="text" class="card-input poppins-regular color-484848 pad15"
+                  [ngClass]="{'bdr-red': (f('username')?.invalid && (f('username')?.dirty || f('username')?.touched))}"
+                  formControlName="username" placeholder="{{'username' | translate }}" />
+              </div>
+              <div class="pad5"></div>
+              <div class="width50 flex flexResponsive mrgntop20">
+                <input type="password" class="card-input poppins-regular color-484848 pad15"
+                  [ngClass]="{'bdr-red': (f('password')?.invalid && (f('password')?.dirty || f('password')?.touched))}"
+                  formControlName="password" placeholder="{{'password' | translate }}" />
+              </div>
+            </div>
+            <div class="width50 flex flexResponsive mrgntop20">
+              <input type="date" class="card-input poppins-regular color-484848 pad15"
+                [ngClass]="{'bdr-red': (f('dob')?.invalid && (f('dob')?.dirty || f('dob')?.touched))}"
+                formControlName="dob" placeholder="{{'dob' | translate }}" />
+            </div>
+            <div class="flex width100 mrgntop20 flexJustifyCenter">
+
+              <button type="submit" [disabled]="form.invalid"
+                class="button-primary btn-02457a font16 minWidth150px bdr-1-EEEEEE ripple cursorPtr font14 poppins-regular pad1030">
+                {{'create' | translate}}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

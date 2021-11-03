@@ -1,0 +1,27 @@
+<app-popup (refreshPage)="getUserList()"></app-popup>
+<div class="bdr-top-1-d5dcef mrgntop2 bdr-rgt-1-d5dcef pad20 bg-linear-gradient height100p">
+    <div class="color-black poppins-medium font22 lineHeight30px mrgnbtm15">
+        {{'users list' | translate}}
+    </div>
+    <div class="bdrRadius10px  bdr-1-c3cbe2 filter-container overflowHidden">
+        <div class="pad20 flexJustifyBetween flex flexResponsive flexAlignItemsCenter">
+            <div class="width50">
+                <app-search (searchEmit)="searchValue = $event"></app-search>
+            </div>
+            <div class="pad10"></div>
+            <div class="bdr-1-ccd1e3 bg-f5f6fa bdrRadius6px flex ripple cursorPtr">
+              <div class="pad10 bdr-1-rgt-ccd1e3 flex flexAlignItemsCenter flexJustifyCenter">
+                <i class="icns icon-plus blue d20"></i>
+              </div>
+              <div (click)="addUserPopup()"
+                class="pad1020 color-02457A lato-semibold font16 lineHeight20px flex flexAlignItemsCenter flexJustifyCenter">
+                {{'add user' | translate}}
+                <i class="icns icon-up-arrow green mrgnleft5"></i>
+              </div>
+            </div>
+        </div>
+        <div class="width100">
+            <app-datatable [table]="appStoreService.tableObj" [search]="searchValue"></app-datatable>
+        </div>
+    </div>
+</div>
